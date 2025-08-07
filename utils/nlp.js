@@ -174,6 +174,7 @@ async function processVoiceInput(text, language = 'en') {
     'price_inquiry',
     'hours_inquiry',
     'location_inquiry',
+    'specific_appointment',
     'appointment_booking',
     'parking_inquiry',
     'transport_inquiry',
@@ -233,6 +234,14 @@ async function checkIntent(text, intentType, language) {
     const detailedIntent = await detectDetailedServiceIntent(text, language);
     if (detailedIntent) {
       return detailedIntent;
+    }
+  }
+  
+  // Check for specific appointment requests
+  if (intentType === 'specific_appointment') {
+    const appointmentIntent = await detectSpecificAppointmentIntent(text, language);
+    if (appointmentIntent) {
+      return appointmentIntent;
     }
   }
   
@@ -415,6 +424,72 @@ async function detectDetailedServiceIntent(text, language) {
   return null;
 }
 
+// Enhanced appointment intent detection
+async function detectSpecificAppointmentIntent(text, language) {
+  const { salonData } = await loadData();
+  
+  // Create comprehensive search mappings for appointment terms
+  const appointmentMappings = {
+    'manicure': ['manicura', 'manicuras', 'manicure', 'manicures', 'manicura completa', 'manicura semipermanente'],
+    'pedicure': ['pedicura', 'pedicuras', 'pedicure', 'pedicures', 'pedicura completa', 'pedicura semipermanente'],
+    'eyebrows': ['ceja', 'cejas', 'depilación de cejas', 'diseño de cejas'],
+    'eyelashes': ['pestaña', 'pestañas', 'lifting de pestañas'],
+    'facial': ['tratamiento facial'],
+    'nails': ['extensiones de uñas'],
+    'micropigmentation': ['micropigmentación', 'micropigmentation'],
+    'pack': ['pack', 'packs', 'paquete', 'paquetes'],
+    'spa': ['spa manos', 'spa de pies'],
+    'lifting': ['lifting de pestañas'],
+    'laminado': ['laminado de cejas'],
+    'diseño': ['francesa'],
+    'semipermanente': ['semi-permanente'],
+    'gel': ['uñas gel', 'extensiones gel'],
+    'depilación': ['depilación con hilo'],
+    'tinte': ['tinte de pestañas', 'tinte de cejas']
+  };
+  
+  console.log(`🔍 Checking appointment mappings for: "${text}"`);
+  
+  // Check for specific appointment keywords
+  for (const [englishTerm, terms] of Object.entries(appointmentMappings)) {
+    for (const term of terms) {
+      if (text.includes(term.toLowerCase())) {
+        console.log(`✅ Found appointment: ${englishTerm} (matched: ${term})`);
+        return {
+          type: 'specific_appointment',
+          confidence: 0.8,
+          language: language,
+          originalText: text,
+          entities: [{ type: 'service', value: englishTerm }],
+          service: englishTerm
+        };
+      }
+    }
+  }
+  
+  // Check for general appointment inquiry patterns
+  const appointmentInquiryPatterns = [
+    'book an appointment', 'make an appointment', 'schedule', 'reserve', 'booking',
+    'reservar una cita', 'hacer una cita', 'agendar', 'reserva', 'cita', 'agenda'
+  ];
+  
+  for (const pattern of appointmentInquiryPatterns) {
+    if (text.includes(pattern.toLowerCase())) {
+      console.log(`✅ Appointment inquiry detected (matched: ${pattern})`);
+      return {
+        type: 'appointment_booking',
+        confidence: 0.7,
+        language: language,
+        originalText: text,
+        entities: []
+      };
+    }
+  }
+  
+  console.log(`❌ No specific appointment found for: "${text}"`);
+  return null;
+}
+
 // Enhanced response generation
 async function generateResponse(intent, language) {
   const { intents, salonData, scheduleData } = await loadData();
@@ -451,8 +526,11 @@ async function generateResponse(intent, language) {
     case 'transport_inquiry':
       return generateTransportResponse(language);
       
+    case 'specific_appointment':
+      return generateAppointmentResponse(language, intent.service);
+      
     case 'appointment_booking':
-      return generateAppointmentResponse(language);
+      return generateAppointmentResponse(language, intent.service);
       
     case 'greeting':
       return intents.responses.greeting[language] || intents.responses.greeting.en;
@@ -728,10 +806,17 @@ async function generateTransportResponse(language) {
 }
 
 // Generate appointment response
-async function generateAppointmentResponse(language) {
+async function generateAppointmentResponse(language, service = null) {
+  if (service) {
+    // Specific service appointment
+    return language === 'es'
+      ? `¡Excelente! Puedo ayudarte a reservar una cita para ${service}. ¿Qué fecha y hora prefieres? Estamos disponibles de lunes a viernes de 9:30 AM a 8:30 PM, y sábados de 9:30 AM a 2:30 PM. ¿Te gustaría reservarlo ahora?`
+      : `Excellent! I can help you book an appointment for ${service}. What date and time would you prefer? We're available Monday through Friday from 9:30 AM to 8:30 PM, and Saturdays from 9:30 AM to 2:30 PM. Would you like to book it now?`;
+  }
+  
   return language === 'es'
-    ? `Perfecto, entiendo que quieres reservar una cita. ¿Para qué fecha y hora te gustaría? También puedo ayudarte a elegir el servicio que mejor se adapte a tus necesidades.`
-    : `Perfect, I understand you want to book an appointment. What date and time would you like? I can also help you choose the service that best fits your needs.`;
+    ? `Perfecto, entiendo que quieres reservar una cita. ¿Para qué servicio específico te gustaría reservar? Puedo ayudarte con manicuras, pedicuras, faciales, servicios de cejas y más. ¿Qué fecha y hora prefieres?`
+    : `Perfect, I understand you want to book an appointment. What specific service would you like to book? I can help you with manicures, pedicures, facials, eyebrow services, and more. What date and time would you prefer?`;
 }
 
 // Generate general response for unrecognized queries

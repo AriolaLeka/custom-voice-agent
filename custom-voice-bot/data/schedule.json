@@ -1,0 +1,71 @@
+{
+  "business_hours": {
+    "Monday":   "09:30-20:30",
+    "Tuesday":  "09:30-20:30",
+    "Wednesday":"09:30-20:30",
+    "Thursday": "09:30-20:30",
+    "Friday":   "09:30-20:30",
+    "Saturday": "09:30-14:30",
+    "Sunday":   "Closed"
+  },
+  "location": {
+    "address": "Calle Santos Justo y Pastor 72, Valencia",
+    "city": "Valencia",
+    "postal_code": "",
+    "country": "España",
+    "google_maps_url": "",
+    "directions": "Estamos en el centro de Valencia, cerca de la zona de La Salud. Fácil acceso en transporte público con múltiples opciones de bus y metro.",
+    "landmarks": [
+      "La Salud (zona cercana)",
+      "Santos Justo y Pastor (iglesia cercana)"
+    ],
+    "public_transport": {
+      "bus": [
+        {
+          "line": "30, 40",
+          "stop": "Doctor Manuel Candela (parell) - Sants Just i Pastor",
+          "distance": "3 min caminando (250 m)"
+        },
+        {
+          "line": "32",
+          "stop": "Sants Just i Pastor - Lleons",
+          "distance": "1 min caminando (59 m)"
+        }
+      ],
+      "metro": [
+        {
+          "line": "Línea 5, 7",
+          "stop": "Amistat-Casa de Salut",
+          "distance": "5 min caminando"
+        }
+      ]
+    }
+  },
+  "parking": {
+    "available": true,
+    "options": [
+      {
+        "type": "Parking privado",
+        "location": "C/ del Marí Albesa, 5",
+        "distance": "5 min caminando (350 m)",
+        "cost": "Variable",
+        "hours": "24h"
+      },
+      {
+        "type": "Parking privado",
+        "location": "Carrer de Lorenç Palmireno, 10",
+        "distance": "7 min caminando (500 m)",
+        "cost": "Variable",
+        "hours": "cierra a las 10pm"
+      },
+      {
+        "type": "Zona azul/blanca",
+        "location": "Calles cercanas",
+        "distance": "1-2 min caminando",
+        "cost": "1€/hora",
+        "hours": "9:00-20:00"
+      }
+    ],
+    "notes": "Recomendamos usar transporte público o parking público. La zona azul tiene limitación de tiempo."
+  }
+}

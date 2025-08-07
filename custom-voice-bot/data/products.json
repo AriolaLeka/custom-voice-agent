@@ -1,0 +1,306 @@
+{
+  "services": [
+    {
+      "category": "Manicuras",
+      "url": "https://reservas.koibox.cloud/heras-nails-lashes-1",
+      "variants": [
+        {
+          "name": "Diseño o Francesa",
+          "description": "Diseños sencillos o francesa tradicional. Precio para 10 uñas. Para diseños más elaborados tiene costo adicional proporcional a la complejidad.",
+          "price_original_eur": 3.0,
+          "price_discounted_eur": 3.0,
+          "duration": ""
+        },
+        {
+          "name": "SPA Manos",
+          "description": "Complementa cualquier servicio de Manicura. Exfoliación, mascarilla, masaje relajante.",
+          "price_original_eur": 8.0,
+          "price_discounted_eur": 8.0,
+          "duration": ""
+        },
+        {
+          "name": "Manicura Completa",
+          "description": "Incluye dar forma a la uña, limpieza de cutículas y brillo (opcional). NO incluye esmaltado ni retirar producto previa.",
+          "price_original_eur": 14.0,
+          "price_discounted_eur": 14.0,
+          "duration": ""
+        },
+        {
+          "name": "Manicura Completa Esmaltado Normal",
+          "description": "Incluye dar forma a la uña, limpieza de cutículas y color liso tradicional de preferencia. Diseño o francesa solamente posible con semipermanente.",
+          "price_original_eur": 20.0,
+          "price_discounted_eur": 20.0,
+          "duration": ""
+        },
+        {
+          "name": "Manicura Completa Semipermanente",
+          "description": "Incluye dar forma a la uña, limpieza de cutículas y color liso semipermanente de preferencia. Diseño o francesa agendar aparte.",
+          "price_original_eur": 25.0,
+          "price_discounted_eur": 25.0,
+          "duration": ""
+        },
+        {
+          "name": "Manicura Semipermanente con Refuerzo",
+          "description": "Base semipermanente de refuerzo y nivelación de las uñas. Diseño o francesa agendar aparte. A partir de tamaño L cuenta como un Relleno de Uñas Gel.",
+          "price_original_eur": 30.0,
+          "price_discounted_eur": 30.0,
+          "duration": ""
+        },
+        {
+          "name": "Manicura con Gel (Relleno/BIAB)",
+          "description": "Mantenimiento de uñas Gel o Gel sobre el largo de la uña natural (BIAB). Diseño o francesa agendar aparte. Tamaño S: 32€ Tamaño M/L: 38€ Tamaño XL: 45€.",
+          "price_original_eur": 38.0,
+          "price_discounted_eur": 38.0,
+          "duration": ""
+        },
+        {
+          "name": "Extensiones de uñas con Tip (Soft Gel)",
+          "description": "Tips/Soft Gel nails. Avisar antes de tu cita si traes esmalte o gel.",
+          "price_original_eur": 42.0,
+          "price_discounted_eur": 42.0,
+          "duration": ""
+        },
+        {
+          "name": "Extensiones de Uñas Gel",
+          "description": "Tamaño S/M/L. Diseño o francesa agendar aparte.",
+          "price_original_eur": 50.0,
+          "price_discounted_eur": 50.0,
+          "duration": ""
+        }
+      ]
+    },
+    {
+      "category": "Pedicuras",
+      "url": "https://reservas.koibox.cloud/heras-nails-lashes-1",
+      "variants": [
+        {
+          "name": "Diseño o Francesa Pies",
+          "description": "Diseños sencillos o francesa tradicional. Precio para 10 uñas. Para diseños más elaborados tiene costo adicional proporcional a la complejidad.",
+          "price_original_eur": 3.0,
+          "price_discounted_eur": 3.0,
+          "duration": ""
+        },
+        {
+          "name": "Spa de Pies",
+          "description": "Complementa cualquier Pedicura. Exfoliación, mascarilla hidratante, masaje relajante.",
+          "price_original_eur": 10.0,
+          "price_discounted_eur": 10.0,
+          "duration": ""
+        },
+        {
+          "name": "Pedicura Completa",
+          "description": "Incluye dar forma a la uña, limpieza de cutículas y durezas. NO incluye esmaltado ni retirar esmalte/gel.",
+          "price_original_eur": 25.0,
+          "price_discounted_eur": 25.0,
+          "duration": ""
+        },
+        {
+          "name": "Pedicura Esmaltado Semipermanente",
+          "description": "Incluye dar forma a la uña, limpieza de cutículas y esmalte semipermanente de preferencia. NO incluye durezas de los pies. Diseño o francesa agendar aparte.",
+          "price_original_eur": 32.0,
+          "price_discounted_eur": 32.0,
+          "duration": ""
+        },
+        {
+          "name": "Pedicura Completa Esmaltado Normal",
+          "description": "Incluye dar forma a la uña, limpieza de cutículas, durezas y color liso tradicional de preferencia. Diseño o francesa solamente posible con semipermanente.",
+          "price_original_eur": 36.0,
+          "price_discounted_eur": 36.0,
+          "duration": ""
+        },
+        {
+          "name": "Pedicura Completa Semipermanente",
+          "description": "Incluye dar forma a la uña, limpieza de cutículas, durezas y color liso semipermanente de preferencia. Diseño o francesa agendar aparte.",
+          "price_original_eur": 38.0,
+          "price_discounted_eur": 38.0,
+          "duration": ""
+        }
+      ]
+    },
+    {
+      "category": "Cejas y Depilación",
+      "url": "https://reservas.koibox.cloud/heras-nails-lashes-1",
+      "variants": [
+        {
+          "name": "Depilación con Hilo Labio Superior",
+          "description": "Con cera +2€.",
+          "price_original_eur": 5.0,
+          "price_discounted_eur": 5.0,
+          "duration": ""
+        },
+        {
+          "name": "Depilación de Cejas Masculino con Hilo",
+          "description": "Con cera +2€.",
+          "price_original_eur": 10.0,
+          "price_discounted_eur": 10.0,
+          "duration": ""
+        },
+        {
+          "name": "Depilación de Cejas con Hilo",
+          "description": "Incluye asesoría y diseño. Con cera +2€.",
+          "price_original_eur": 12.0,
+          "price_discounted_eur": 12.0,
+          "duration": ""
+        },
+        {
+          "name": "Depilación Cejas y Labio con Hilo",
+          "description": "Incluye asesoría y diseño. Con cera +2€.",
+          "price_original_eur": 14.0,
+          "price_discounted_eur": 14.0,
+          "duration": ""
+        },
+        {
+          "name": "Depilación de Cejas y Tinte con Hilo",
+          "description": "Incluye asesoría y diseño. Con cera +2€.",
+          "price_original_eur": 16.0,
+          "price_discounted_eur": 16.0,
+          "duration": ""
+        },
+        {
+          "name": "Diseño de Cejas y Henna",
+          "description": "Incluye asesoría, diseño y depilación. Con cera +2€.",
+          "price_original_eur": 16.0,
+          "price_discounted_eur": 16.0,
+          "duration": ""
+        },
+        {
+          "name": "Depilación Facial y Cejas con Hilo",
+          "description": "Incluye asesoría y diseño. Con cera +2€.",
+          "price_original_eur": 20.0,
+          "price_discounted_eur": 20.0,
+          "duration": ""
+        },
+        {
+          "name": "Laminado de Cejas",
+          "description": "Incluye asesoría, diseño, depilación y tinte o henna. Duración aprox. 4-5 semanas.",
+          "price_original_eur": 30.0,
+          "price_discounted_eur": 30.0,
+          "duration": ""
+        }
+      ]
+    },
+    {
+      "category": "Pestañas",
+      "url": "https://reservas.koibox.cloud/heras-nails-lashes-1",
+      "variants": [
+        {
+          "name": "Tinte de Pestañas",
+          "description": "Ideal para quienes desean una mirada intensa y expresiva sin necesidad de maquillaje diario.",
+          "price_original_eur": 12.0,
+          "price_discounted_eur": 12.0,
+          "duration": ""
+        },
+        {
+          "name": "Lifting de Pestañas y Tinte",
+          "description": "Perfecto para lograr una mirada impactante, con pestañas levantadas y definidas, sin necesidad de usar rizador ni máscara. Duración aprox. 4-6 semanas.",
+          "price_original_eur": 35.0,
+          "price_discounted_eur": 35.0,
+          "duration": ""
+        }
+      ]
+    },
+    {
+      "category": "Faciales",
+      "url": "https://reservas.koibox.cloud/heras-nails-lashes-1",
+      "variants": [
+        {
+          "name": "Pack 3x Sesiones de Dermapen con Ácido Hialurónico",
+          "description": "Estimula la producción de colágeno, mejora la textura y reduce cicatrices, manchas y líneas de expresión.",
+          "price_original_eur": 180.0,
+          "price_discounted_eur": 180.0,
+          "duration": ""
+        },
+        {
+          "name": "Facial Booster",
+          "description": "Mantenimiento de la piel con limpieza, exfoliación e hidratación o extracción de poros.",
+          "price_original_eur": 25.0,
+          "price_discounted_eur": 25.0,
+          "duration": ""
+        },
+        {
+          "name": "HERA'S GLOW",
+          "description": "Higiene facial profunda con exfoliación ultrasónica, hydrapeeling, extracción y masaje facial.",
+          "price_original_eur": 45.0,
+          "price_discounted_eur": 45.0,
+          "duration": ""
+        },
+        {
+          "name": "Tratamiento Facial Anti-edad",
+          "description": "Tratamiento para pieles maduras y signos de envejecimiento. Incluye facial booster.",
+          "price_original_eur": 55.0,
+          "price_discounted_eur": 55.0,
+          "duration": ""
+        },
+        {
+          "name": "Tratamiento Facial Anti-Acné",
+          "description": "Para pieles con acné y producción excesiva de grasa. Incluye facial booster.",
+          "price_original_eur": 55.0,
+          "price_discounted_eur": 55.0,
+          "duration": ""
+        },
+        {
+          "name": "Tratamiento Dermapen Activo Ácido Hialurónico",
+          "description": "Hidratación profunda, elasticidad y turgencia. Incluye facial booster.",
+          "price_original_eur": 65.0,
+          "price_discounted_eur": 65.0,
+          "duration": ""
+        }
+      ]
+    },
+    {
+      "category": "Micropigmentación",
+      "url": "https://reservas.koibox.cloud/heras-nails-lashes-1",
+      "variants": [
+        {
+          "name": "Micropigmentación Cejas",
+          "description": "Define y corrige la forma de las cejas con pigmentos naturales. Incluye 1 repaso a 1 mes. Duración aprox. 2-3 años.",
+          "price_original_eur": 200.0,
+          "price_discounted_eur": 200.0,
+          "duration": ""
+        },
+        {
+          "name": "Micropigmentación Labios",
+          "description": "Mejora color y forma de los labios, corrige asimetrías. Incluye 1 repaso a 1 mes. Duración aprox. 2-3 años.",
+          "price_original_eur": 200.0,
+          "price_discounted_eur": 200.0,
+          "duration": ""
+        },
+        {
+          "name": "Pack Micropigmentación Cejas y Labios",
+          "description": "Paquete combinado para cejas perfectas y labios definidos.",
+          "price_original_eur": 350.0,
+          "price_discounted_eur": 350.0,
+          "duration": ""
+        },
+        {
+          "name": "Visita Informativa",
+          "description": "Consulta gratuita para resolver dudas y evaluar elegibilidad.",
+          "price_original_eur": 0.0,
+          "price_discounted_eur": 0.0,
+          "duration": ""
+        }
+      ]
+    },
+    {
+      "category": "Pack Manicura Completa Semipermanente y Depilación de Cejas",
+      "url": "https://reservas.koibox.cloud/heras-nails-lashes-1",
+      "price_original_eur": 37.0,
+      "price_discounted_eur": 37.0,
+      "duration": ""
+    },
+    {
+      "category": "Pack Manicura y Pedicura Completa Semipermanente",
+      "url": "https://reservas.koibox.cloud/heras-nails-lashes-1",
+      "price_original_eur": 63.0,
+      "price_discounted_eur": 63.0,
+      "duration": ""
+    },
+    {
+      "category": "Pack Laminado de Cejas y Lifting de Pestañas",
+      "url": "https://reservas.koibox.cloud/heras-nails-lashes-1",
+      "price_original_eur": 65.0,
+      "price_discounted_eur": 65.0,
+      "duration": ""
+    }
+  ]
+}

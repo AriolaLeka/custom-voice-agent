@@ -169,13 +169,13 @@ async function processVoiceInput(text, language = 'en') {
   const intentsToCheck = [
     'greeting',
     'goodbye',
+    'specific_appointment',
+    'appointment_booking',
     'service_inquiry',
     'specific_service',
     'price_inquiry',
     'hours_inquiry',
     'location_inquiry',
-    'specific_appointment',
-    'appointment_booking',
     'parking_inquiry',
     'transport_inquiry',
     'detailed_service_info',
@@ -428,6 +428,20 @@ async function detectDetailedServiceIntent(text, language) {
 async function detectSpecificAppointmentIntent(text, language) {
   const { salonData } = await loadData();
   
+  // Check for appointment keywords first (before service detection)
+  const appointmentKeywords = [
+    'appointment', 'book', 'booking', 'reserve', 'reservation', 'schedule',
+    'cita', 'reservar', 'reserva', 'agendar', 'agenda', 'programar'
+  ];
+  
+  const hasAppointmentKeyword = appointmentKeywords.some(keyword => 
+    text.toLowerCase().includes(keyword)
+  );
+  
+  if (!hasAppointmentKeyword) {
+    return null; // Not an appointment request
+  }
+  
   // Create comprehensive search mappings for appointment terms
   const appointmentMappings = {
     'manicure': ['manicura', 'manicuras', 'manicure', 'manicures', 'manicura completa', 'manicura semipermanente'],
@@ -457,7 +471,7 @@ async function detectSpecificAppointmentIntent(text, language) {
         console.log(`✅ Found appointment: ${englishTerm} (matched: ${term})`);
         return {
           type: 'specific_appointment',
-          confidence: 0.8,
+          confidence: 0.9,
           language: language,
           originalText: text,
           entities: [{ type: 'service', value: englishTerm }],
@@ -467,27 +481,15 @@ async function detectSpecificAppointmentIntent(text, language) {
     }
   }
   
-  // Check for general appointment inquiry patterns
-  const appointmentInquiryPatterns = [
-    'book an appointment', 'make an appointment', 'schedule', 'reserve', 'booking',
-    'reservar una cita', 'hacer una cita', 'agendar', 'reserva', 'cita', 'agenda'
-  ];
-  
-  for (const pattern of appointmentInquiryPatterns) {
-    if (text.includes(pattern.toLowerCase())) {
-      console.log(`✅ Appointment inquiry detected (matched: ${pattern})`);
-      return {
-        type: 'appointment_booking',
-        confidence: 0.7,
-        language: language,
-        originalText: text,
-        entities: []
-      };
-    }
-  }
-  
-  console.log(`❌ No specific appointment found for: "${text}"`);
-  return null;
+  // If no specific service found, return general appointment
+  console.log(`✅ Appointment request detected (no specific service)`);
+  return {
+    type: 'appointment_booking',
+    confidence: 0.8,
+    language: language,
+    originalText: text,
+    entities: []
+  };
 }
 
 // Enhanced response generation
